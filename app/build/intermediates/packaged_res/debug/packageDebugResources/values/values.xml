@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#66BB6A</color>
+    <color name="black">#000000</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="error">#D32F2F</color>
+    <color name="gravedad_grave">#F44336</color>
+    <color name="gravedad_leve">#4CAF50</color>
+    <color name="gravedad_moderada">#FF9800</color>
+    <color name="gravedad_urgente">#9C27B0</color>
+    <color name="ic_launcher_background">#2E7D32</color>
+    <color name="primary">#2E7D32</color>
+    <color name="primary_dark">#1B5E20</color>
+    <color name="primary_light">#A5D6A7</color>
+    <color name="success">#388E3C</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="warning">#F57F17</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Assent-IA</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_cerrar_sesion">Cerrar sesión</string>
+    <string name="btn_completar_visita">Completar visita</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_iniciar_visita">Iniciar visita</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="btn_nueva_incidencia">Nueva incidencia</string>
+    <string name="confirmar_cerrar_sesion">¿Cerrar sesión?</string>
+    <string name="error_credentials">Email o contraseña incorrectos</string>
+    <string name="error_email_required">El email es obligatorio</string>
+    <string name="error_password_required">La contraseña es obligatoria</string>
+    <string name="gravedad_grave">Grave</string>
+    <string name="gravedad_leve">Leve</string>
+    <string name="gravedad_moderada">Moderada</string>
+    <string name="gravedad_urgente">Urgente</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_mensaje">Escribe un mensaje…</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="loading">Cargando…</string>
+    <string name="login_subtitle">Tu asistente de ayuda a domicilio</string>
+    <string name="login_title">Bienvenido/a a Assent-IA</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_cuidadores">Cuidadores</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_historial">Historial</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_incidencias">Incidencias</string>
+    <string name="nav_pacientes">Pacientes</string>
+    <string name="no_incidencias">No hay incidencias registradas</string>
+    <string name="no_mensajes">No hay mensajes aún</string>
+    <string name="no_visitas_hoy">No tienes visitas programadas para hoy</string>
+    <string name="tarea_alimentacion">Alimentación</string>
+    <string name="tarea_compania">Compañía</string>
+    <string name="tarea_ejercicio">Ejercicio</string>
+    <string name="tarea_higiene">Higiene</string>
+    <string name="tarea_medicacion">Medicación</string>
+    <string name="tarea_otro">Otro</string>
+    <string name="visita_cancelada">Cancelada</string>
+    <string name="visita_completada">Completada</string>
+    <string name="visita_en_curso">En curso</string>
+    <string name="visita_pendiente">Pendiente</string>
+    <style name="Theme.AssentIA" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+    <style name="Theme.AssentIA.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

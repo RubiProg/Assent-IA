@@ -1,0 +1,166 @@
+[
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_agenda.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_agenda.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_mensaje.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_mensaje.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_detalle_visita.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_detalle_visita.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_paciente.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_paciente.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_detalle_paciente.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_detalle_paciente.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_incidencia.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_incidencia.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_nueva_incidencia.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_nueva_incidencia.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_admin_dashboard.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_admin_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\drawable_bg_circle_primary.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\drawable\\bg_circle_primary.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_historial.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_historial.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_familiar_home.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_familiar_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_visita.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_visita.xml"
+    },
+    {
+        "merged": "com.assentia.app-debug-54:/navigation_nav_graph.xml.flat",
+        "source": "com.assentia.app-main-56:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_pacientes.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_pacientes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.assentia.app-debug-54:/layout_fragment_nuevo_paciente.xml.flat",
+        "source": "com.assentia.app-main-56:/layout/fragment_nuevo_paciente.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_chat.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_tarea.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_tarea.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_item_medicacion.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\item_medicacion.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-debug-54:\\layout_fragment_incidencias.xml.flat",
+        "source": "C:\\Users\\Usuario\\.gradle\\daemon\\9.0.0\\com.assentia.app-main-56:\\layout\\fragment_incidencias.xml"
+    }
+]

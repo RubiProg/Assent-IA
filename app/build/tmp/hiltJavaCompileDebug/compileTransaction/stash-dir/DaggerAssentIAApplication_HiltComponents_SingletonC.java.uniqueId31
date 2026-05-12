@@ -1,0 +1,952 @@
+package com.assentia.app;
+
+import android.app.Activity;
+import android.app.Service;
+import android.view.View;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.SavedStateHandle;
+import androidx.lifecycle.ViewModel;
+import com.assentia.app.data.datasource.MockDataSource;
+import com.assentia.app.data.repository.AuthRepositoryImpl;
+import com.assentia.app.data.repository.IncidenciaRepositoryImpl;
+import com.assentia.app.data.repository.MedicacionRepositoryImpl;
+import com.assentia.app.data.repository.MensajeRepositoryImpl;
+import com.assentia.app.data.repository.PacienteRepositoryImpl;
+import com.assentia.app.data.repository.VisitaRepositoryImpl;
+import com.assentia.app.domain.usecase.CompletarTareaUseCase;
+import com.assentia.app.domain.usecase.CompletarVisitaUseCase;
+import com.assentia.app.domain.usecase.CreateIncidenciaUseCase;
+import com.assentia.app.domain.usecase.CreatePacienteUseCase;
+import com.assentia.app.domain.usecase.EnviarMensajeUseCase;
+import com.assentia.app.domain.usecase.GetAllPacientesUseCase;
+import com.assentia.app.domain.usecase.GetCurrentUserUseCase;
+import com.assentia.app.domain.usecase.GetIncidenciasAbiertasUseCase;
+import com.assentia.app.domain.usecase.GetIncidenciasByPacienteUseCase;
+import com.assentia.app.domain.usecase.GetMedicacionPacienteUseCase;
+import com.assentia.app.domain.usecase.GetMensajesUseCase;
+import com.assentia.app.domain.usecase.GetPacienteByIdUseCase;
+import com.assentia.app.domain.usecase.GetPacientesByFamiliarUseCase;
+import com.assentia.app.domain.usecase.GetRegistrosMedicacionUseCase;
+import com.assentia.app.domain.usecase.GetUnreadCountUseCase;
+import com.assentia.app.domain.usecase.GetVisitaByIdUseCase;
+import com.assentia.app.domain.usecase.GetVisitasByCuidadorUseCase;
+import com.assentia.app.domain.usecase.GetVisitasByPacienteUseCase;
+import com.assentia.app.domain.usecase.GetVisitasHoyUseCase;
+import com.assentia.app.domain.usecase.IniciarVisitaUseCase;
+import com.assentia.app.domain.usecase.LoginUseCase;
+import com.assentia.app.domain.usecase.LogoutUseCase;
+import com.assentia.app.domain.usecase.RegistrarMedicacionUseCase;
+import com.assentia.app.domain.usecase.ResolverIncidenciaUseCase;
+import com.assentia.app.domain.usecase.UpdatePacienteUseCase;
+import com.assentia.app.presentation.MainActivity;
+import com.assentia.app.presentation.fragment.AdminDashboardFragment;
+import com.assentia.app.presentation.fragment.AgendaFragment;
+import com.assentia.app.presentation.fragment.ChatFragment;
+import com.assentia.app.presentation.fragment.DetallePacienteFragment;
+import com.assentia.app.presentation.fragment.DetalleVisitaFragment;
+import com.assentia.app.presentation.fragment.FamiliarHomeFragment;
+import com.assentia.app.presentation.fragment.HistorialFragment;
+import com.assentia.app.presentation.fragment.IncidenciasFragment;
+import com.assentia.app.presentation.fragment.LoginFragment;
+import com.assentia.app.presentation.fragment.NuevaIncidenciaFragment;
+import com.assentia.app.presentation.fragment.PacientesFragment;
+import com.assentia.app.presentation.viewmodel.AdminDashboardViewModel;
+import com.assentia.app.presentation.viewmodel.AdminDashboardViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.AgendaViewModel;
+import com.assentia.app.presentation.viewmodel.AgendaViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.AuthViewModel;
+import com.assentia.app.presentation.viewmodel.AuthViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.ChatViewModel;
+import com.assentia.app.presentation.viewmodel.ChatViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.DetalleVisitaViewModel;
+import com.assentia.app.presentation.viewmodel.DetalleVisitaViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.FamiliarHomeViewModel;
+import com.assentia.app.presentation.viewmodel.FamiliarHomeViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.IncidenciasViewModel;
+import com.assentia.app.presentation.viewmodel.IncidenciasViewModel_HiltModules;
+import com.assentia.app.presentation.viewmodel.PacientesViewModel;
+import com.assentia.app.presentation.viewmodel.PacientesViewModel_HiltModules;
+import dagger.hilt.android.ActivityRetainedLifecycle;
+import dagger.hilt.android.ViewModelLifecycle;
+import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
+import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
+import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
+import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewModelComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_InternalFactoryFactory_Factory;
+import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory;
+import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
+import dagger.hilt.android.internal.modules.ApplicationContextModule;
+import dagger.internal.DaggerGenerated;
+import dagger.internal.DoubleCheck;
+import dagger.internal.IdentifierNameString;
+import dagger.internal.KeepFieldType;
+import dagger.internal.LazyClassKeyMap;
+import dagger.internal.MapBuilder;
+import dagger.internal.Preconditions;
+import dagger.internal.Provider;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+
+@DaggerGenerated
+@Generated(
+    value = "dagger.internal.codegen.ComponentProcessor",
+    comments = "https://dagger.dev"
+)
+@SuppressWarnings({
+    "unchecked",
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast",
+    "deprecation"
+})
+public final class DaggerAssentIAApplication_HiltComponents_SingletonC {
+  private DaggerAssentIAApplication_HiltComponents_SingletonC() {
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static AssentIAApplication_HiltComponents.SingletonC create() {
+    return new Builder().build();
+  }
+
+  public static final class Builder {
+    private Builder() {
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
+      Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    public AssentIAApplication_HiltComponents.SingletonC build() {
+      return new SingletonCImpl();
+    }
+  }
+
+  private static final class ActivityRetainedCBuilder implements AssentIAApplication_HiltComponents.ActivityRetainedC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private SavedStateHandleHolder savedStateHandleHolder;
+
+    private ActivityRetainedCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ActivityRetainedCBuilder savedStateHandleHolder(
+        SavedStateHandleHolder savedStateHandleHolder) {
+      this.savedStateHandleHolder = Preconditions.checkNotNull(savedStateHandleHolder);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ActivityRetainedC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandleHolder, SavedStateHandleHolder.class);
+      return new ActivityRetainedCImpl(singletonCImpl, savedStateHandleHolder);
+    }
+  }
+
+  private static final class ActivityCBuilder implements AssentIAApplication_HiltComponents.ActivityC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private Activity activity;
+
+    private ActivityCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ActivityCBuilder activity(Activity activity) {
+      this.activity = Preconditions.checkNotNull(activity);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ActivityC build() {
+      Preconditions.checkBuilderRequirement(activity, Activity.class);
+      return new ActivityCImpl(singletonCImpl, activityRetainedCImpl, activity);
+    }
+  }
+
+  private static final class FragmentCBuilder implements AssentIAApplication_HiltComponents.FragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private Fragment fragment;
+
+    private FragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public FragmentCBuilder fragment(Fragment fragment) {
+      this.fragment = Preconditions.checkNotNull(fragment);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.FragmentC build() {
+      Preconditions.checkBuilderRequirement(fragment, Fragment.class);
+      return new FragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragment);
+    }
+  }
+
+  private static final class ViewWithFragmentCBuilder implements AssentIAApplication_HiltComponents.ViewWithFragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private View view;
+
+    private ViewWithFragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+    }
+
+    @Override
+    public ViewWithFragmentCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ViewWithFragmentC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewWithFragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl, view);
+    }
+  }
+
+  private static final class ViewCBuilder implements AssentIAApplication_HiltComponents.ViewC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private View view;
+
+    private ViewCBuilder(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public ViewCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ViewC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, view);
+    }
+  }
+
+  private static final class ViewModelCBuilder implements AssentIAApplication_HiltComponents.ViewModelC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private SavedStateHandle savedStateHandle;
+
+    private ViewModelLifecycle viewModelLifecycle;
+
+    private ViewModelCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ViewModelCBuilder savedStateHandle(SavedStateHandle handle) {
+      this.savedStateHandle = Preconditions.checkNotNull(handle);
+      return this;
+    }
+
+    @Override
+    public ViewModelCBuilder viewModelLifecycle(ViewModelLifecycle viewModelLifecycle) {
+      this.viewModelLifecycle = Preconditions.checkNotNull(viewModelLifecycle);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ViewModelC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandle, SavedStateHandle.class);
+      Preconditions.checkBuilderRequirement(viewModelLifecycle, ViewModelLifecycle.class);
+      return new ViewModelCImpl(singletonCImpl, activityRetainedCImpl, savedStateHandle, viewModelLifecycle);
+    }
+  }
+
+  private static final class ServiceCBuilder implements AssentIAApplication_HiltComponents.ServiceC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private Service service;
+
+    private ServiceCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ServiceCBuilder service(Service service) {
+      this.service = Preconditions.checkNotNull(service);
+      return this;
+    }
+
+    @Override
+    public AssentIAApplication_HiltComponents.ServiceC build() {
+      Preconditions.checkBuilderRequirement(service, Service.class);
+      return new ServiceCImpl(singletonCImpl, service);
+    }
+  }
+
+  private static final class ViewWithFragmentCImpl extends AssentIAApplication_HiltComponents.ViewWithFragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private final ViewWithFragmentCImpl viewWithFragmentCImpl = this;
+
+    private ViewWithFragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+
+
+    }
+  }
+
+  private static final class FragmentCImpl extends AssentIAApplication_HiltComponents.FragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl = this;
+
+    private FragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        Fragment fragmentParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+
+    @Override
+    public void injectAdminDashboardFragment(AdminDashboardFragment adminDashboardFragment) {
+    }
+
+    @Override
+    public void injectAgendaFragment(AgendaFragment agendaFragment) {
+    }
+
+    @Override
+    public void injectChatFragment(ChatFragment chatFragment) {
+    }
+
+    @Override
+    public void injectDetallePacienteFragment(DetallePacienteFragment detallePacienteFragment) {
+    }
+
+    @Override
+    public void injectDetalleVisitaFragment(DetalleVisitaFragment detalleVisitaFragment) {
+    }
+
+    @Override
+    public void injectFamiliarHomeFragment(FamiliarHomeFragment familiarHomeFragment) {
+    }
+
+    @Override
+    public void injectHistorialFragment(HistorialFragment historialFragment) {
+    }
+
+    @Override
+    public void injectIncidenciasFragment(IncidenciasFragment incidenciasFragment) {
+    }
+
+    @Override
+    public void injectLoginFragment(LoginFragment loginFragment) {
+    }
+
+    @Override
+    public void injectNuevaIncidenciaFragment(NuevaIncidenciaFragment nuevaIncidenciaFragment) {
+    }
+
+    @Override
+    public void injectPacientesFragment(PacientesFragment pacientesFragment) {
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return activityCImpl.getHiltInternalFactoryFactory();
+    }
+
+    @Override
+    public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
+      return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+  }
+
+  private static final class ViewCImpl extends AssentIAApplication_HiltComponents.ViewC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final ViewCImpl viewCImpl = this;
+
+    private ViewCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+  }
+
+  private static final class ActivityCImpl extends AssentIAApplication_HiltComponents.ActivityC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl = this;
+
+    private ActivityCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, Activity activityParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+
+    }
+
+    @Override
+    public void injectMainActivity(MainActivity mainActivity) {
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
+    }
+
+    @Override
+    public Map<Class<?>, Boolean> getViewModelKeys() {
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(8).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AdminDashboardViewModel, AdminDashboardViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AgendaViewModel, AgendaViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AuthViewModel, AuthViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_ChatViewModel, ChatViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel, DetalleVisitaViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel, FamiliarHomeViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_IncidenciasViewModel, IncidenciasViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_PacientesViewModel, PacientesViewModel_HiltModules.KeyModule.provide()).build());
+    }
+
+    @Override
+    public ViewModelComponentBuilder getViewModelComponentBuilder() {
+      return new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public FragmentComponentBuilder fragmentComponentBuilder() {
+      return new FragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @Override
+    public ViewComponentBuilder viewComponentBuilder() {
+      return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_assentia_app_presentation_viewmodel_ChatViewModel = "com.assentia.app.presentation.viewmodel.ChatViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_IncidenciasViewModel = "com.assentia.app.presentation.viewmodel.IncidenciasViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel = "com.assentia.app.presentation.viewmodel.DetalleVisitaViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_PacientesViewModel = "com.assentia.app.presentation.viewmodel.PacientesViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel = "com.assentia.app.presentation.viewmodel.FamiliarHomeViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_AdminDashboardViewModel = "com.assentia.app.presentation.viewmodel.AdminDashboardViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_AgendaViewModel = "com.assentia.app.presentation.viewmodel.AgendaViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_AuthViewModel = "com.assentia.app.presentation.viewmodel.AuthViewModel";
+
+      @KeepFieldType
+      ChatViewModel com_assentia_app_presentation_viewmodel_ChatViewModel2;
+
+      @KeepFieldType
+      IncidenciasViewModel com_assentia_app_presentation_viewmodel_IncidenciasViewModel2;
+
+      @KeepFieldType
+      DetalleVisitaViewModel com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel2;
+
+      @KeepFieldType
+      PacientesViewModel com_assentia_app_presentation_viewmodel_PacientesViewModel2;
+
+      @KeepFieldType
+      FamiliarHomeViewModel com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel2;
+
+      @KeepFieldType
+      AdminDashboardViewModel com_assentia_app_presentation_viewmodel_AdminDashboardViewModel2;
+
+      @KeepFieldType
+      AgendaViewModel com_assentia_app_presentation_viewmodel_AgendaViewModel2;
+
+      @KeepFieldType
+      AuthViewModel com_assentia_app_presentation_viewmodel_AuthViewModel2;
+    }
+  }
+
+  private static final class ViewModelCImpl extends AssentIAApplication_HiltComponents.ViewModelC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ViewModelCImpl viewModelCImpl = this;
+
+    private Provider<AdminDashboardViewModel> adminDashboardViewModelProvider;
+
+    private Provider<AgendaViewModel> agendaViewModelProvider;
+
+    private Provider<AuthViewModel> authViewModelProvider;
+
+    private Provider<ChatViewModel> chatViewModelProvider;
+
+    private Provider<DetalleVisitaViewModel> detalleVisitaViewModelProvider;
+
+    private Provider<FamiliarHomeViewModel> familiarHomeViewModelProvider;
+
+    private Provider<IncidenciasViewModel> incidenciasViewModelProvider;
+
+    private Provider<PacientesViewModel> pacientesViewModelProvider;
+
+    private ViewModelCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
+        ViewModelLifecycle viewModelLifecycleParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+      initialize(savedStateHandleParam, viewModelLifecycleParam);
+
+    }
+
+    private GetAllPacientesUseCase getAllPacientesUseCase() {
+      return new GetAllPacientesUseCase(singletonCImpl.pacienteRepositoryImplProvider.get());
+    }
+
+    private GetIncidenciasAbiertasUseCase getIncidenciasAbiertasUseCase() {
+      return new GetIncidenciasAbiertasUseCase(singletonCImpl.incidenciaRepositoryImplProvider.get());
+    }
+
+    private GetVisitasHoyUseCase getVisitasHoyUseCase() {
+      return new GetVisitasHoyUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private GetVisitasByCuidadorUseCase getVisitasByCuidadorUseCase() {
+      return new GetVisitasByCuidadorUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private IniciarVisitaUseCase iniciarVisitaUseCase() {
+      return new IniciarVisitaUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private LoginUseCase loginUseCase() {
+      return new LoginUseCase(singletonCImpl.authRepositoryImplProvider.get());
+    }
+
+    private LogoutUseCase logoutUseCase() {
+      return new LogoutUseCase(singletonCImpl.authRepositoryImplProvider.get());
+    }
+
+    private GetCurrentUserUseCase getCurrentUserUseCase() {
+      return new GetCurrentUserUseCase(singletonCImpl.authRepositoryImplProvider.get());
+    }
+
+    private GetMensajesUseCase getMensajesUseCase() {
+      return new GetMensajesUseCase(singletonCImpl.mensajeRepositoryImplProvider.get());
+    }
+
+    private EnviarMensajeUseCase enviarMensajeUseCase() {
+      return new EnviarMensajeUseCase(singletonCImpl.mensajeRepositoryImplProvider.get());
+    }
+
+    private GetVisitaByIdUseCase getVisitaByIdUseCase() {
+      return new GetVisitaByIdUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private GetPacienteByIdUseCase getPacienteByIdUseCase() {
+      return new GetPacienteByIdUseCase(singletonCImpl.pacienteRepositoryImplProvider.get());
+    }
+
+    private CompletarVisitaUseCase completarVisitaUseCase() {
+      return new CompletarVisitaUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private CompletarTareaUseCase completarTareaUseCase() {
+      return new CompletarTareaUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private GetMedicacionPacienteUseCase getMedicacionPacienteUseCase() {
+      return new GetMedicacionPacienteUseCase(singletonCImpl.medicacionRepositoryImplProvider.get());
+    }
+
+    private GetRegistrosMedicacionUseCase getRegistrosMedicacionUseCase() {
+      return new GetRegistrosMedicacionUseCase(singletonCImpl.medicacionRepositoryImplProvider.get());
+    }
+
+    private RegistrarMedicacionUseCase registrarMedicacionUseCase() {
+      return new RegistrarMedicacionUseCase(singletonCImpl.medicacionRepositoryImplProvider.get());
+    }
+
+    private GetPacientesByFamiliarUseCase getPacientesByFamiliarUseCase() {
+      return new GetPacientesByFamiliarUseCase(singletonCImpl.pacienteRepositoryImplProvider.get());
+    }
+
+    private GetVisitasByPacienteUseCase getVisitasByPacienteUseCase() {
+      return new GetVisitasByPacienteUseCase(singletonCImpl.visitaRepositoryImplProvider.get());
+    }
+
+    private GetUnreadCountUseCase getUnreadCountUseCase() {
+      return new GetUnreadCountUseCase(singletonCImpl.mensajeRepositoryImplProvider.get());
+    }
+
+    private GetIncidenciasByPacienteUseCase getIncidenciasByPacienteUseCase() {
+      return new GetIncidenciasByPacienteUseCase(singletonCImpl.incidenciaRepositoryImplProvider.get());
+    }
+
+    private CreateIncidenciaUseCase createIncidenciaUseCase() {
+      return new CreateIncidenciaUseCase(singletonCImpl.incidenciaRepositoryImplProvider.get());
+    }
+
+    private ResolverIncidenciaUseCase resolverIncidenciaUseCase() {
+      return new ResolverIncidenciaUseCase(singletonCImpl.incidenciaRepositoryImplProvider.get());
+    }
+
+    private CreatePacienteUseCase createPacienteUseCase() {
+      return new CreatePacienteUseCase(singletonCImpl.pacienteRepositoryImplProvider.get());
+    }
+
+    private UpdatePacienteUseCase updatePacienteUseCase() {
+      return new UpdatePacienteUseCase(singletonCImpl.pacienteRepositoryImplProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandle savedStateHandleParam,
+        final ViewModelLifecycle viewModelLifecycleParam) {
+      this.adminDashboardViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.agendaViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
+      this.authViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
+      this.chatViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
+      this.detalleVisitaViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+      this.familiarHomeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
+      this.incidenciasViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.pacientesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
+    }
+
+    @Override
+    public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(8).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AdminDashboardViewModel, ((Provider) adminDashboardViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AgendaViewModel, ((Provider) agendaViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_AuthViewModel, ((Provider) authViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_ChatViewModel, ((Provider) chatViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel, ((Provider) detalleVisitaViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel, ((Provider) familiarHomeViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_IncidenciasViewModel, ((Provider) incidenciasViewModelProvider)).put(LazyClassKeyProvider.com_assentia_app_presentation_viewmodel_PacientesViewModel, ((Provider) pacientesViewModelProvider)).build());
+    }
+
+    @Override
+    public Map<Class<?>, Object> getHiltViewModelAssistedMap() {
+      return Collections.<Class<?>, Object>emptyMap();
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_assentia_app_presentation_viewmodel_AuthViewModel = "com.assentia.app.presentation.viewmodel.AuthViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_ChatViewModel = "com.assentia.app.presentation.viewmodel.ChatViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel = "com.assentia.app.presentation.viewmodel.DetalleVisitaViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel = "com.assentia.app.presentation.viewmodel.FamiliarHomeViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_IncidenciasViewModel = "com.assentia.app.presentation.viewmodel.IncidenciasViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_PacientesViewModel = "com.assentia.app.presentation.viewmodel.PacientesViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_AgendaViewModel = "com.assentia.app.presentation.viewmodel.AgendaViewModel";
+
+      static String com_assentia_app_presentation_viewmodel_AdminDashboardViewModel = "com.assentia.app.presentation.viewmodel.AdminDashboardViewModel";
+
+      @KeepFieldType
+      AuthViewModel com_assentia_app_presentation_viewmodel_AuthViewModel2;
+
+      @KeepFieldType
+      ChatViewModel com_assentia_app_presentation_viewmodel_ChatViewModel2;
+
+      @KeepFieldType
+      DetalleVisitaViewModel com_assentia_app_presentation_viewmodel_DetalleVisitaViewModel2;
+
+      @KeepFieldType
+      FamiliarHomeViewModel com_assentia_app_presentation_viewmodel_FamiliarHomeViewModel2;
+
+      @KeepFieldType
+      IncidenciasViewModel com_assentia_app_presentation_viewmodel_IncidenciasViewModel2;
+
+      @KeepFieldType
+      PacientesViewModel com_assentia_app_presentation_viewmodel_PacientesViewModel2;
+
+      @KeepFieldType
+      AgendaViewModel com_assentia_app_presentation_viewmodel_AgendaViewModel2;
+
+      @KeepFieldType
+      AdminDashboardViewModel com_assentia_app_presentation_viewmodel_AdminDashboardViewModel2;
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final ViewModelCImpl viewModelCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          ViewModelCImpl viewModelCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.viewModelCImpl = viewModelCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.assentia.app.presentation.viewmodel.AdminDashboardViewModel 
+          return (T) new AdminDashboardViewModel(viewModelCImpl.getAllPacientesUseCase(), viewModelCImpl.getIncidenciasAbiertasUseCase());
+
+          case 1: // com.assentia.app.presentation.viewmodel.AgendaViewModel 
+          return (T) new AgendaViewModel(viewModelCImpl.getVisitasHoyUseCase(), viewModelCImpl.getVisitasByCuidadorUseCase(), viewModelCImpl.getAllPacientesUseCase(), viewModelCImpl.iniciarVisitaUseCase());
+
+          case 2: // com.assentia.app.presentation.viewmodel.AuthViewModel 
+          return (T) new AuthViewModel(viewModelCImpl.loginUseCase(), viewModelCImpl.logoutUseCase(), viewModelCImpl.getCurrentUserUseCase());
+
+          case 3: // com.assentia.app.presentation.viewmodel.ChatViewModel 
+          return (T) new ChatViewModel(viewModelCImpl.getMensajesUseCase(), viewModelCImpl.enviarMensajeUseCase());
+
+          case 4: // com.assentia.app.presentation.viewmodel.DetalleVisitaViewModel 
+          return (T) new DetalleVisitaViewModel(viewModelCImpl.getVisitaByIdUseCase(), viewModelCImpl.getPacienteByIdUseCase(), viewModelCImpl.iniciarVisitaUseCase(), viewModelCImpl.completarVisitaUseCase(), viewModelCImpl.completarTareaUseCase(), viewModelCImpl.getMedicacionPacienteUseCase(), viewModelCImpl.getRegistrosMedicacionUseCase(), viewModelCImpl.registrarMedicacionUseCase());
+
+          case 5: // com.assentia.app.presentation.viewmodel.FamiliarHomeViewModel 
+          return (T) new FamiliarHomeViewModel(viewModelCImpl.getPacientesByFamiliarUseCase(), viewModelCImpl.getVisitasByPacienteUseCase(), viewModelCImpl.getUnreadCountUseCase());
+
+          case 6: // com.assentia.app.presentation.viewmodel.IncidenciasViewModel 
+          return (T) new IncidenciasViewModel(viewModelCImpl.getIncidenciasByPacienteUseCase(), viewModelCImpl.getIncidenciasAbiertasUseCase(), viewModelCImpl.createIncidenciaUseCase(), viewModelCImpl.resolverIncidenciaUseCase());
+
+          case 7: // com.assentia.app.presentation.viewmodel.PacientesViewModel 
+          return (T) new PacientesViewModel(viewModelCImpl.getAllPacientesUseCase(), viewModelCImpl.createPacienteUseCase(), viewModelCImpl.updatePacienteUseCase());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ActivityRetainedCImpl extends AssentIAApplication_HiltComponents.ActivityRetainedC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl = this;
+
+    private Provider<ActivityRetainedLifecycle> provideActivityRetainedLifecycleProvider;
+
+    private ActivityRetainedCImpl(SingletonCImpl singletonCImpl,
+        SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.singletonCImpl = singletonCImpl;
+
+      initialize(savedStateHandleHolderParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.provideActivityRetainedLifecycleProvider = DoubleCheck.provider(new SwitchingProvider<ActivityRetainedLifecycle>(singletonCImpl, activityRetainedCImpl, 0));
+    }
+
+    @Override
+    public ActivityComponentBuilder activityComponentBuilder() {
+      return new ActivityCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public ActivityRetainedLifecycle getActivityRetainedLifecycle() {
+      return provideActivityRetainedLifecycleProvider.get();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // dagger.hilt.android.ActivityRetainedLifecycle 
+          return (T) ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory.provideActivityRetainedLifecycle();
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ServiceCImpl extends AssentIAApplication_HiltComponents.ServiceC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ServiceCImpl serviceCImpl = this;
+
+    private ServiceCImpl(SingletonCImpl singletonCImpl, Service serviceParam) {
+      this.singletonCImpl = singletonCImpl;
+
+
+    }
+  }
+
+  private static final class SingletonCImpl extends AssentIAApplication_HiltComponents.SingletonC {
+    private final SingletonCImpl singletonCImpl = this;
+
+    private Provider<MockDataSource> mockDataSourceProvider;
+
+    private Provider<PacienteRepositoryImpl> pacienteRepositoryImplProvider;
+
+    private Provider<IncidenciaRepositoryImpl> incidenciaRepositoryImplProvider;
+
+    private Provider<VisitaRepositoryImpl> visitaRepositoryImplProvider;
+
+    private Provider<AuthRepositoryImpl> authRepositoryImplProvider;
+
+    private Provider<MensajeRepositoryImpl> mensajeRepositoryImplProvider;
+
+    private Provider<MedicacionRepositoryImpl> medicacionRepositoryImplProvider;
+
+    private SingletonCImpl() {
+
+      initialize();
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize() {
+      this.mockDataSourceProvider = DoubleCheck.provider(new SwitchingProvider<MockDataSource>(singletonCImpl, 1));
+      this.pacienteRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<PacienteRepositoryImpl>(singletonCImpl, 0));
+      this.incidenciaRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<IncidenciaRepositoryImpl>(singletonCImpl, 2));
+      this.visitaRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<VisitaRepositoryImpl>(singletonCImpl, 3));
+      this.authRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<AuthRepositoryImpl>(singletonCImpl, 4));
+      this.mensajeRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<MensajeRepositoryImpl>(singletonCImpl, 5));
+      this.medicacionRepositoryImplProvider = DoubleCheck.provider(new SwitchingProvider<MedicacionRepositoryImpl>(singletonCImpl, 6));
+    }
+
+    @Override
+    public void injectAssentIAApplication(AssentIAApplication assentIAApplication) {
+    }
+
+    @Override
+    public Set<Boolean> getDisableFragmentGetContextFix() {
+      return Collections.<Boolean>emptySet();
+    }
+
+    @Override
+    public ActivityRetainedComponentBuilder retainedComponentBuilder() {
+      return new ActivityRetainedCBuilder(singletonCImpl);
+    }
+
+    @Override
+    public ServiceComponentBuilder serviceComponentBuilder() {
+      return new ServiceCBuilder(singletonCImpl);
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.assentia.app.data.repository.PacienteRepositoryImpl 
+          return (T) new PacienteRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          case 1: // com.assentia.app.data.datasource.MockDataSource 
+          return (T) new MockDataSource();
+
+          case 2: // com.assentia.app.data.repository.IncidenciaRepositoryImpl 
+          return (T) new IncidenciaRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          case 3: // com.assentia.app.data.repository.VisitaRepositoryImpl 
+          return (T) new VisitaRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          case 4: // com.assentia.app.data.repository.AuthRepositoryImpl 
+          return (T) new AuthRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          case 5: // com.assentia.app.data.repository.MensajeRepositoryImpl 
+          return (T) new MensajeRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          case 6: // com.assentia.app.data.repository.MedicacionRepositoryImpl 
+          return (T) new MedicacionRepositoryImpl(singletonCImpl.mockDataSourceProvider.get());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+}

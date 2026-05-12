@@ -1,0 +1,7 @@
+package com.assentia.app
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class AssentIAApplication : Application()

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary" app:title="Chat" app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_back" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_mensajes"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:padding="8dp" android:clipToPadding="false" app:reverseLayout="false" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="8dp" android:background="@color/white"
+        android:elevation="4dp">
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginEnd="8dp" android:hint="@string/hint_mensaje">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_mensaje"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:importantForAutofill="no"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_enviar"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/btn_enviar" android:layout_gravity="center_vertical" />
+    </LinearLayout>
+</LinearLayout>

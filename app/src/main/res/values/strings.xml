@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Assent-IA</string>
+
+    <!-- Auth -->
+    <string name="login_title">Bienvenido/a a Assent-IA</string>
+    <string name="login_subtitle">Tu asistente de ayuda a domicilio</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="error_email_required">El email es obligatorio</string>
+    <string name="error_password_required">La contraseña es obligatoria</string>
+    <string name="error_credentials">Email o contraseña incorrectos</string>
+
+    <!-- Nav labels -->
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_pacientes">Pacientes</string>
+    <string name="nav_incidencias">Incidencias</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_cuidadores">Cuidadores</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_historial">Historial</string>
+
+    <!-- Visitas -->
+    <string name="visita_pendiente">Pendiente</string>
+    <string name="visita_en_curso">En curso</string>
+    <string name="visita_completada">Completada</string>
+    <string name="visita_cancelada">Cancelada</string>
+    <string name="btn_iniciar_visita">Iniciar visita</string>
+    <string name="btn_completar_visita">Completar visita</string>
+    <string name="btn_nueva_incidencia">Nueva incidencia</string>
+
+    <!-- Tareas -->
+    <string name="tarea_medicacion">Medicación</string>
+    <string name="tarea_higiene">Higiene</string>
+    <string name="tarea_alimentacion">Alimentación</string>
+    <string name="tarea_ejercicio">Ejercicio</string>
+    <string name="tarea_compania">Compañía</string>
+    <string name="tarea_otro">Otro</string>
+
+    <!-- Incidencias -->
+    <string name="gravedad_leve">Leve</string>
+    <string name="gravedad_moderada">Moderada</string>
+    <string name="gravedad_grave">Grave</string>
+    <string name="gravedad_urgente">Urgente</string>
+
+    <!-- Mensajes UI -->
+    <string name="loading">Cargando…</string>
+    <string name="no_visitas_hoy">No tienes visitas programadas para hoy</string>
+    <string name="no_incidencias">No hay incidencias registradas</string>
+    <string name="no_mensajes">No hay mensajes aún</string>
+    <string name="hint_mensaje">Escribe un mensaje…</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_cerrar_sesion">Cerrar sesión</string>
+    <string name="confirmar_cerrar_sesion">¿Cerrar sesión?</string>
+</resources>

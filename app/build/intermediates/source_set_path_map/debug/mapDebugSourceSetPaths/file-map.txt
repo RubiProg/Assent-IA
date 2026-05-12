@@ -1,0 +1,57 @@
+com.assentia.app-appcompat-resources-1.6.1-0 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\0567cafe854c82ed528888de6d48a279\transformed\appcompat-resources-1.6.1\res
+com.assentia.app-sqlite-framework-2.4.0-1 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\07be6965e436a3d2f475bce846aee1f5\transformed\sqlite-framework-2.4.0\res
+com.assentia.app-drawerlayout-1.1.1-2 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\11850c6bde66b0b6c6ae07f854aa89ef\transformed\drawerlayout-1.1.1\res
+com.assentia.app-navigation-common-ktx-2.8.5-3 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\122818aaac74d1f5ba0b52c2ade76aae\transformed\navigation-common-ktx-2.8.5\res
+com.assentia.app-lifecycle-viewmodel-2.7.0-4 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\125b4686d09768ff4d4f9829d0175142\transformed\lifecycle-viewmodel-2.7.0\res
+com.assentia.app-material-1.11.0-5 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\1cdbd5be27ad74fd3fcf4e53c36c1fcb\transformed\material-1.11.0\res
+com.assentia.app-viewpager2-1.0.0-6 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\24d0ba06d5882c8fc99965cbfbddcd8f\transformed\viewpager2-1.0.0\res
+com.assentia.app-swiperefreshlayout-1.1.0-7 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\27098a40905ae05f501a7eb984554e34\transformed\swiperefreshlayout-1.1.0\res
+com.assentia.app-lifecycle-livedata-core-ktx-2.7.0-8 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\2761e6a23fc448baf142ee9fdcc6ded4\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.assentia.app-savedstate-ktx-1.2.1-9 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\2886979f12f6399af9eafb837bf66e85\transformed\savedstate-ktx-1.2.1\res
+com.assentia.app-appcompat-1.6.1-10 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\30c8dc361307744f4502db2fd7bb52f8\transformed\appcompat-1.6.1\res
+com.assentia.app-lifecycle-viewmodel-ktx-2.7.0-11 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\352ce5191db5b0afe9740db1c950ad2a\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.assentia.app-constraintlayout-2.1.4-12 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\42f266b5756425ea56dfbbbedc44e9c0\transformed\constraintlayout-2.1.4\res
+com.assentia.app-slidingpanelayout-1.2.0-13 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\48e87f6399a0d9d97b815e111b9f2996\transformed\slidingpanelayout-1.2.0\res
+com.assentia.app-emoji2-views-helper-1.2.0-14 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\51fcaee06acd1b09dc003046984746b3\transformed\emoji2-views-helper-1.2.0\res
+com.assentia.app-core-ktx-1.12.0-15 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\5545f6d12ca34101f82c684ee246cce3\transformed\core-ktx-1.12.0\res
+com.assentia.app-core-runtime-2.2.0-16 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\599c91bfce7a88733632bc3f9b061885\transformed\core-runtime-2.2.0\res
+com.assentia.app-lifecycle-runtime-2.7.0-17 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\5df2fa0142e3b5642ebde5915e71746e\transformed\lifecycle-runtime-2.7.0\res
+com.assentia.app-lifecycle-runtime-ktx-2.7.0-18 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\676c6b4630d3408fc341247169f261ed\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.assentia.app-navigation-fragment-ktx-2.8.5-19 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\7641a5a295ad53e3e5abefd2a077f047\transformed\navigation-fragment-ktx-2.8.5\res
+com.assentia.app-core-1.12.0-20 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\7a048330fc2ba7ccf6266b3cb2ea5792\transformed\core-1.12.0\res
+com.assentia.app-lifecycle-livedata-2.7.0-21 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\7b7116296da727fcb93612a21944f014\transformed\lifecycle-livedata-2.7.0\res
+com.assentia.app-lifecycle-viewmodel-savedstate-2.7.0-22 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\7d1c49b87ef1941581799965392b944b\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.assentia.app-navigation-fragment-2.8.5-23 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\84719d6346734e066365f61f2f2004e4\transformed\navigation-fragment-2.8.5\res
+com.assentia.app-lifecycle-livedata-ktx-2.7.0-24 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\8c7ba5c088bb599d893fc547e8a3553e\transformed\lifecycle-livedata-ktx-2.7.0\res
+com.assentia.app-navigation-ui-ktx-2.8.5-25 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\969ac4fe81c2da753622e1c9b703c5ad\transformed\navigation-ui-ktx-2.8.5\res
+com.assentia.app-lifecycle-process-2.7.0-26 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\9aec26357b97fdf5cbeb6345ab0fe397\transformed\lifecycle-process-2.7.0\res
+com.assentia.app-fragment-1.6.2-27 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\a348142c4e877621a0fbec526b1add30\transformed\fragment-1.6.2\res
+com.assentia.app-coil-base-2.5.0-28 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\a4fb550b36355578f430281107383f1d\transformed\coil-base-2.5.0\res
+com.assentia.app-activity-ktx-1.8.2-29 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\a9b1a332fb424a9b4f7f50db1c50b3ea\transformed\activity-ktx-1.8.2\res
+com.assentia.app-coordinatorlayout-1.1.0-30 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\b1ff23aa4914dd99f99830b0c46055ee\transformed\coordinatorlayout-1.1.0\res
+com.assentia.app-fragment-ktx-1.6.2-31 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\b3d50901a511aebeee0ce74bbd8cce32\transformed\fragment-ktx-1.6.2\res
+com.assentia.app-emoji2-1.2.0-32 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\b770e145f4366b24561f97c4e5941d00\transformed\emoji2-1.2.0\res
+com.assentia.app-activity-1.8.2-33 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\c2a07b24388ce7aa1199403ab9bd844e\transformed\activity-1.8.2\res
+com.assentia.app-startup-runtime-1.1.1-34 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\c84ba4858104e9b964fdc724a0e4b80d\transformed\startup-runtime-1.1.1\res
+com.assentia.app-lifecycle-livedata-core-2.7.0-35 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\d1648f4df8ee5d199a375a15a1123dfb\transformed\lifecycle-livedata-core-2.7.0\res
+com.assentia.app-cardview-1.0.0-36 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\d880a39e89d5ade5378e9bf0a7b6100d\transformed\cardview-1.0.0\res
+com.assentia.app-navigation-common-2.8.5-37 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\e36ec7b2f1e888d1f5245c450c74013d\transformed\navigation-common-2.8.5\res
+com.assentia.app-navigation-ui-2.8.5-38 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\e5df3b248e03cf6ad540b57a669b8b96\transformed\navigation-ui-2.8.5\res
+com.assentia.app-room-runtime-2.6.1-39 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\e9aa9446fab506c427e3a043bc685ccc\transformed\room-runtime-2.6.1\res
+com.assentia.app-savedstate-1.2.1-40 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\ea01f961e9c1d18e1753d90869d197f3\transformed\savedstate-1.2.1\res
+com.assentia.app-navigation-runtime-2.8.5-41 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\ea6f96419d206c2cd8e382d8ba8d0368\transformed\navigation-runtime-2.8.5\res
+com.assentia.app-annotation-experimental-1.4.1-42 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f22a059caf2f286cfd4a9a73176eb83b\transformed\annotation-experimental-1.4.1\res
+com.assentia.app-profileinstaller-1.3.1-43 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f3e1d2e17f08e2e310d3f7552eb22107\transformed\profileinstaller-1.3.1\res
+com.assentia.app-navigation-runtime-ktx-2.8.5-44 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f56ea6548c58a2a2f8e45763b74db887\transformed\navigation-runtime-ktx-2.8.5\res
+com.assentia.app-window-1.0.0-45 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f7cacfeb1f2ddecfb2104a12ca0770d3\transformed\window-1.0.0\res
+com.assentia.app-sqlite-2.4.0-46 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f8b521818d9d3814ccb746a00a9c2d1c\transformed\sqlite-2.4.0\res
+com.assentia.app-transition-1.4.1-47 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\f996e08e142c5aff3165ed8268c8fa08\transformed\transition-1.4.1\res
+com.assentia.app-recyclerview-1.1.0-48 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\fc3b57e66cd8da0d65b28231e7c26bbd\transformed\recyclerview-1.1.0\res
+com.assentia.app-room-ktx-2.6.1-49 C:\Users\Usuario\.gradle\caches\9.0.0\transforms\fe1607a19f65d6225dd7d29c0673cc56\transformed\room-ktx-2.6.1\res
+com.assentia.app-pngs-50 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\build\generated\res\pngs\debug
+com.assentia.app-resValues-51 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\build\generated\res\resValues\debug
+com.assentia.app-packageDebugResources-52 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.assentia.app-packageDebugResources-53 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.assentia.app-debug-54 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.assentia.app-debug-55 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\src\debug\res
+com.assentia.app-main-56 C:\Users\Usuario\Desktop\Proyectos propios\AssentIA\AssentIA\app\src\main\res

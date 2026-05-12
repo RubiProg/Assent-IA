@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- ── AUTH ─────────────────────────────────────────── -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.assentia.app.presentation.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_admin"
+            app:destination="@id/adminDashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_cuidador"
+            app:destination="@id/agendaFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_familiar"
+            app:destination="@id/familiarHomeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- ── ADMIN ─────────────────────────────────────────── -->
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.assentia.app.presentation.fragment.AdminDashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_admin_dashboard">
+        <action
+            android:id="@+id/action_dashboard_to_pacientes"
+            app:destination="@id/pacientesFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_incidencias"
+            app:destination="@id/incidenciasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pacientesFragment"
+        android:name="com.assentia.app.presentation.fragment.PacientesFragment"
+        android:label="Pacientes"
+        tools:layout="@layout/fragment_pacientes">
+        <action
+            android:id="@+id/action_pacientes_to_detalle"
+            app:destination="@id/detallePacienteFragment" />
+        <action
+            android:id="@+id/action_pacientes_to_nuevo"
+            app:destination="@id/nuevoPacienteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nuevoPacienteFragment"
+        android:name="com.assentia.app.presentation.fragment.NuevoPacienteFragment"
+        android:label="Nuevo Paciente"
+        tools:layout="@layout/fragment_nuevo_paciente" />
+
+    <fragment
+        android:id="@+id/detallePacienteFragment"
+        android:name="com.assentia.app.presentation.fragment.DetallePacienteFragment"
+        android:label="Detalle paciente"
+        tools:layout="@layout/fragment_detalle_paciente">
+        <argument
+            android:name="pacienteId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- ── CUIDADOR ──────────────────────────────────────── -->
+    <fragment
+        android:id="@+id/agendaFragment"
+        android:name="com.assentia.app.presentation.fragment.AgendaFragment"
+        android:label="Agenda"
+        tools:layout="@layout/fragment_agenda">
+        <action
+            android:id="@+id/action_agenda_to_visita"
+            app:destination="@id/detalleVisitaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleVisitaFragment"
+        android:name="com.assentia.app.presentation.fragment.DetalleVisitaFragment"
+        android:label="Visita"
+        tools:layout="@layout/fragment_detalle_visita">
+        <argument
+            android:name="visitaId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_visita_to_incidencia"
+            app:destination="@id/nuevaIncidenciaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/incidenciasFragment"
+        android:name="com.assentia.app.presentation.fragment.IncidenciasFragment"
+        android:label="Incidencias"
+        tools:layout="@layout/fragment_incidencias">
+        <action
+            android:id="@+id/action_incidencias_to_nueva"
+            app:destination="@id/nuevaIncidenciaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nuevaIncidenciaFragment"
+        android:name="com.assentia.app.presentation.fragment.NuevaIncidenciaFragment"
+        android:label="Nueva incidencia"
+        tools:layout="@layout/fragment_nueva_incidencia">
+        <argument
+            android:name="pacienteId"
+            app:argType="string" />
+        <argument
+            android:name="visitaId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
+
+    <!-- ── FAMILIAR ──────────────────────────────────────── -->
+    <fragment
+        android:id="@+id/familiarHomeFragment"
+        android:name="com.assentia.app.presentation.fragment.FamiliarHomeFragment"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_familiar_home">
+        <action
+            android:id="@+id/action_home_to_chat"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_home_to_historial"
+            app:destination="@id/historialFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.assentia.app.presentation.fragment.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="pacienteId"
+            app:argType="string" />
+        <argument
+            android:name="destinatarioId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historialFragment"
+        android:name="com.assentia.app.presentation.fragment.HistorialFragment"
+        android:label="Historial"
+        tools:layout="@layout/fragment_historial">
+        <argument
+            android:name="pacienteId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
